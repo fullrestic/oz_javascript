@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 메소드 및 속성</title>
+</head>
+<body>
+    <h1 id = "song-title" class = "heading text" title = "VOS의 2019 발매곡">
+        <span>다시 만날까 봐</span>
+    </h1>
+    <p class = "lyrics">인스타로 몰래 보는 너의 하루들 누가 봐도 헤어진 티를 내</p>
+    <p class = "lyrics">팔로우 다 끊고서 좋아요는 왜 눌렀니</p>
+    <script>
+        console.log(document.querySelector(".lyrics"))  // 첫번째만 선택
+        console.log(document.querySelectorAll(".lyrics"))   
+            // 해당하는 쿼리 전부 선택
+            // 리스트 형태로 인덱스가 붙어서 반환
+
+        console.log(document.getElementsByClassName("lyrics"))   // 클래스 이름만으로 선택, 해당하는 요소 전체 선택
+        const title = document.getElementById("song-title")   // id 이름만으로 선택
+        console.log(title)
+
+        console.log(title.textContent)  // 코드 상에 존재하는 공백 포함
+        console.log(title.innerText)    // 공백 미포함
+        console.log(title.className)    // 클래스명 확인, 여러개일 경우 모두 반환
+        console.log(title.innerText)    // 공백 미포함
+        console.log(title.style)    // 타이틀 속성값
+        console.log(title.title)    // 타이틀 속성값
+    </script>
+</body>
+</html>

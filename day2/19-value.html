@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>value 속성</title>
+</head>
+<body>
+    <input id="talk">
+    <input type="button" id="push" value = "push">
+
+    <form id = "form">
+        <input name="name">
+        <input name="nick">
+        <input type="submit">
+    </form>
+
+    <script>
+        
+        const form = document.getElementById("form")        
+        form.addEventListener("submit", function(event){
+            event.preventDefault()
+                // 제출이 발생하면 페이지는 새로고침 됨
+                // 새로고침이 안되게 만들고 싶으면 preventDefault()를 사용해 기본적으로 실행되는 것들을 실행되지 않게 할 수 있음
+            const p = document.createElement("p")
+            p.textContent = `${event.target.name.value}의 별명은 ${event.target.nick.value}`
+            document.body.append(p)
+        })
+
+    </script>
+
+    <!-- value 기초 실습
+
+        <script>
+        const input = document.getElementById("talk")
+        const button = document.getElementById("push")
+
+        // keyup : 키를 눌렀다가 뗄 때
+        input.addEventListener("keyup", function(e){
+            console.log(e.target.value) // 값을 입력할 때마다 콘솔에 출력
+        }) 
+
+        button.addEventListener("click", function(){
+            // alert(input.value)  // 입력한 내용으로 alert창 띄움
+            // input.value = "버튼 눌러서 써짐"    // 해당 내용이 입력으로 들어감, 사용자가 수정 가능
+            
+            const p = document.createElement("p")
+            p.textContent = input.value
+            document.body.append(p)
+        })
+    </script> -->
+</body>
+</html>
